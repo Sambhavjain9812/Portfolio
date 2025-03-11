@@ -33,11 +33,11 @@ def user_input_node(state: GraphState):
     goal = st.selectbox("Fitness Goal", 
                          ["Weight Loss", "Muscle Gain", "Endurance", "Flexibility"], 
                          key="goal_select")
-    age = st.number_input("Age", min_value=18, max_value=100, step=1, key="age_input")
-    weight = st.number_input("Weight (kg)", min_value=30.0, max_value=200.0, step=0.1, key="weight_input")
+    age = st.number_input("Age", min_value=10, max_value=100, step=1, key="age_input")
+    weight = st.number_input("Weight (kg)", min_value=30, max_value=200, step=1, key="weight_input")
     height = st.number_input("Height (cm)", min_value=100, max_value=250, step=1, key="height_input")
     activity_level = st.selectbox("Activity Level", 
-                                  ["Sedentary", "Moderate", "Active"], 
+                                  ["Sedentary", "Moderate", "Active", "Overly Active"], 
                                   key="activity_select")
     preferences = st.text_area("Dietary/Workout Preferences", key="preferences_area")
 
@@ -55,6 +55,36 @@ def user_input_node(state: GraphState):
         return {"user_data": user_data, "progress": {}}
     return state
 
+# def workout_plan_node(state: GraphState):
+#     st.header("Workout Plan")
+#     if not state.get("user_data"):
+#         st.write("Please submit your profile first.")
+#         return state
+
+#     user_data = state["user_data"]
+#     prompt = (f"Generate a workout plan for: Goal: {user_data['goal']}, "
+#               f"Level: {user_data['activity_level']}, Preferences: {user_data['preferences']}")
+#     workout_plan = generate_response(prompt)
+#     st.write(workout_plan)
+#     if st.button("Next: Diet Plan", key="next_diet_plan"):
+#         return state
+#     return state
+
+# def diet_plan_node(state: GraphState):
+#     st.header("Diet Plan")
+#     if not state.get("user_data"):
+#         st.write("Please submit your profile first.")
+#         return state
+
+#     user_data = state["user_data"]
+#     prompt = (f"Generate a diet plan for: Goal: {user_data['goal']}, "
+#               f"Level: {user_data['activity_level']}, Preferences: {user_data['preferences']}")
+#     diet_plan = generate_response(prompt)
+#     st.write(diet_plan)
+#     if st.button("Next: Track Progress", key="next_track_progress"):
+#         return state
+#     return state
+
 def workout_plan_node(state: GraphState):
     st.header("Workout Plan")
     if not state.get("user_data"):
@@ -62,13 +92,22 @@ def workout_plan_node(state: GraphState):
         return state
 
     user_data = state["user_data"]
-    prompt = (f"Generate a workout plan for: Goal: {user_data['goal']}, "
-              f"Level: {user_data['activity_level']}, Preferences: {user_data['preferences']}")
+    # Improved prompt with more context, user data, timeframe, and output formatting instructions.
+    prompt = (
+        f"You are a professional fitness trainer. "
+        f"Generate a detailed weekly workout plan for a person whose goal is {user_data['goal'].lower()}. "
+        f"User profile details: Age: {user_data['age']} years, Weight: {user_data['weight']} kg, "
+        f"Height: {user_data['height']} cm, Activity Level: {user_data['activity_level']}. "
+        f"Additional preferences: {user_data['preferences'] if user_data['preferences'] else 'None'}. "
+        "Include a warm-up, detailed exercise descriptions with sets, reps, and rest intervals, and a cool-down routine. "
+        "Present the plan in clear bullet points or as a day-by-day schedule. in short paragraphs."
+    )
     workout_plan = generate_response(prompt)
     st.write(workout_plan)
     if st.button("Next: Diet Plan", key="next_diet_plan"):
         return state
     return state
+
 
 def diet_plan_node(state: GraphState):
     st.header("Diet Plan")
@@ -77,13 +116,23 @@ def diet_plan_node(state: GraphState):
         return state
 
     user_data = state["user_data"]
-    prompt = (f"Generate a diet plan for: Goal: {user_data['goal']}, "
-              f"Level: {user_data['activity_level']}, Preferences: {user_data['preferences']}")
+    # Improved prompt with a nutrition expert persona, detailed user data, and instructions for formatting the meal plan.
+    prompt = (
+        f"You are a certified nutritionist. "
+        f"Generate a detailed weekly diet plan for a person with the following profile: "
+        f"Goal: {user_data['goal'].lower()}, Age: {user_data['age']} years, Weight: {user_data['weight']} kg, "
+        f"Height: {user_data['height']} cm, Activity Level: {user_data['activity_level']}. "
+        f"Additional dietary/workout preferences: {user_data['preferences'] if user_data['preferences'] else 'None'}. "
+        "Include meal options for breakfast, lunch, dinner, and snacks for each day of the week, "
+        "ensuring balanced nutrition, portion sizes, and approximate caloric values where appropriate. "
+        "Format the plan in a clear, organized manner with headers for each day. in short"
+    )
     diet_plan = generate_response(prompt)
     st.write(diet_plan)
     if st.button("Next: Track Progress", key="next_track_progress"):
         return state
     return state
+
 
 def tracker_node(state: GraphState):
     st.header("Daily Progress Tracker")
