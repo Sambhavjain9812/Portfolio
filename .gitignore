@@ -31,3 +31,5 @@ Thumbs.db
 .vscode/
 .streamlit/
 test.py
+
+.env
