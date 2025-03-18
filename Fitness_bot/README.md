@@ -1,4 +1,3 @@
-Live demo [https://portfolio-tdhpjodtnkodz5hzz6hnrg.streamlit.app/]
 # Fitness Routine Bot
 
 ## Overview
@@ -56,6 +55,9 @@ streamlit run app.py
 4. **Track Your Progress**
    - Log workouts, diet, and weight changes daily.
    
+## Live Demo
+[Click here to try the Fitness Routine Bot](https://portfolio-tdhpjodtnkodz5hzz6hnrg.streamlit.app/)
+
 ## File Structure
 ```
 fitness-bot/
@@ -65,15 +67,5 @@ fitness-bot/
 │── README.md          # Project documentation
 ```
 
-## Future Enhancements
-- Add real-time fitness tracking with external APIs
-- Provide exercise illustrations or videos
-- Enable progress analytics and visualizations
 
-## License
-This project is open-source under the MIT License.
-
----
-
-**Contributions Welcome!** If you find issues or have suggestions, feel free to open an issue or submit a pull request.
 
