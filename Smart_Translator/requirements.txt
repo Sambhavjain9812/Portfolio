@@ -1,0 +1,5 @@
+groq
+streamlit
+python-dotenv
+pyttsx3
+TextBlob
