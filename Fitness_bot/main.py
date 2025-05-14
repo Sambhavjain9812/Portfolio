@@ -10,7 +10,7 @@ from typing import TypedDict
 # Ensure that the API key exists
 GEMINI_API_KEY = os.environ.get('GEMINI_API_KEY')
 if not GEMINI_API_KEY:
-    st.error("GEMINI_API_KEY not found. Please set it in your environment.")
+    st.error("GEMINI_API_KEY not found. Set it in your environment please.")
     st.stop()
 
 configure(api_key=GEMINI_API_KEY)
