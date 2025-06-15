@@ -56,7 +56,7 @@ cd advanced-smart-translator
 
 ```bash
 python -m venv venv
-source venv/bin/activate    # or venv\Scripts\activate on Windows
+venv\Scripts\activate on Windows
 ```
 
 3. **Install Dependencies**
@@ -104,21 +104,5 @@ streamlit run main.py
 * Improve streaming display using `st.empty()` + placeholder updates
 * Add support for document (PDF/DOCX) translation
 * Model selector for Groq LLMs
-
----
-
-## 🙌 Credits
-
-* Built with ❤️ by Sambhav Jain
-* LLM Power by [Groq](https://groq.com)
-* UI with [Streamlit](https://streamlit.io)
-
----
-
-## 📜 License
-
-This project is licensed under the MIT License.
-
-```
 
 ---
