@@ -1,5 +1,5 @@
 
-````markdown
+
 # 🌐 Advanced Smart Translator
 
 A powerful, context-aware multilingual translation web app built with **Streamlit** and powered by **Groq LLMs** (e.g., Gemma, Mixtral). This app supports tone-controlled translations across 12+ global and regional languages, making it ideal for high-quality translations of large texts.
@@ -122,11 +122,3 @@ This project is licensed under the MIT License.
 ```
 
 ---
-
-Let me know if you'd like:
-- a `requirements.txt`
-- deployment instructions for Streamlit Cloud or Render
-- a badge-based header (e.g., `![Python](...)`) style README
-
-Or if you'd like a shorter version for your GitHub profile.
-```
