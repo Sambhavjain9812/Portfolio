@@ -145,14 +145,14 @@ async def handle_translation(input_text, translation_mode, target_language, tone
     return " ".join(translated_chunks)
 
 def main():
-    st.set_page_config(page_title="🚀 Advanced Smart Translator", layout="wide")
+    st.set_page_config(page_title="  Advanced Smart Translator", layout="wide")
     
     if 'translation_manager' not in st.session_state:
         st.session_state.translation_manager = TranslationManager()
     
-    st.title("🌎 Advanced Smart Translator")
+    st.title("  Advanced Smart Translator")
 
-    with st.expander("⚙️ Translation Settings", expanded=True):
+    with st.expander("  Translation Settings", expanded=True):
         col1, col2, col3 = st.columns(3)
         with col1:
             translation_mode = st.radio("Translation Mode", ["Normal", "Contextual"])
@@ -161,27 +161,27 @@ def main():
         with col3:
             tone = st.selectbox("Select Translation Tone", list(TONE_OPTIONS.keys()))
 
-    st.subheader("📝 Enter Text for Translation")
+    st.subheader("  Enter Text for Translation")
     input_text = st.text_area("Enter text:", height=200)
 
     if input_text:
         detected_lang = st.session_state.translation_manager.detect_language(input_text)
-        st.write(f"🌍 Detected Language: {detected_lang}")
+        st.write(f"  Detected Language: {detected_lang}")
 
-    if st.button("🚀 Translate"):
+    if st.button("  Translate"):
         if not input_text:
             st.error("Please enter some text.")
             return
         
         final_translation = asyncio.run(handle_translation(input_text, translation_mode, target_language, tone))
         
-        st.subheader(f"🎯 {target_language} Translation")
+        st.subheader(f" {target_language} Translation")
         st.write(final_translation)
 
         # Provide download option
         if final_translation:
             st.download_button(
-                label="📥 Download Translation",
+                label="Download Translation",
                 data=final_translation,
                 file_name=f"translated_text_{target_language}.txt",
                 mime="text/plain",
