@@ -5,6 +5,7 @@ from langchain.vectorstores import FAISS
 from langchain.embeddings import HuggingFaceEmbeddings
 from langchain.llms import HuggingFacePipeline
 from langchain.chains import RetrievalQA
+from langchain.chains import RetrievalQA
 
 # --- Step 1: Prepare your Documents ---
 # A small set of documents containing information about Python.
