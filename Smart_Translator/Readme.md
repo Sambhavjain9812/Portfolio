@@ -83,11 +83,6 @@ streamlit run main.py
 
 ---
 
-## 📸 Demo Screenshots
-
-> *Add screenshots or a GIF demo here to showcase how translation looks, preferably one normal and one contextual.*
-
----
 
 ## 🔍 Sample Use Cases
 
