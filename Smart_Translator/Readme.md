@@ -42,6 +42,12 @@ A powerful, context-aware multilingual translation web app built with **Streamli
 | Environment    | python-dotenv       |
 
 ---
+## 📸 Demo Screenshots
+
+https://smart-translator-sambhav.streamlit.app/
+
+---
+
 
 ## 🛠️ Installation
 
