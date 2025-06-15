@@ -1,6 +1,3 @@
-Here’s a professional, polished `README.md` for your **Advanced Smart Translator** project:
-
----
 
 ````markdown
 # 🌐 Advanced Smart Translator
