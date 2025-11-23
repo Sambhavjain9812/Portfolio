@@ -19,3 +19,52 @@ test.py
 Demo_historical_agent.webm
 Demo_historical_agent.mp4
 thumbnail.png
+.Laundromat/
+faiss_index/
+*.index
+
+# --- ENV & Secrets ---
+.env
+.streamlit/secrets.toml
+
+# --- Python Cache ---
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# --- Virtual Environments ---
+venv/
+.venv/
+*.venv
+
+# --- Notebook Cache ---
+.ipynb_checkpoints/
+
+# --- OS Files ---
+.DS_Store
+Thumbs.db
+
+# --- Logs & Temp ---
+*.log
+*.tmp
+*.bak
+
+# --- VS Code ---
+.vscode/
+
+# --- Streamlit (optional if not using UI) ---
+# .streamlit/
+
+# --- Project Trash ---
+test.py
+Demo_historical_agent.webm
+Demo_historical_agent.mp4
+thumbnail.png
+
+# --- Unused old project folder (optional) ---
+.Laundromat/
+
+# --- FAISS Index ---
+faiss_index/
+*.index
