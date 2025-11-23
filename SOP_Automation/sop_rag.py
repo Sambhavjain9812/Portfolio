@@ -1,6 +1,7 @@
 
-import os
-os.environ["GOOGLE_API_KEY"] = "AIzaSyDXnO8N7EUyQz5QT-7qa-3BsBNkGH6rxlk"
+from dotenv import load_dotenv
+load_dotenv()
+
 
 
 
